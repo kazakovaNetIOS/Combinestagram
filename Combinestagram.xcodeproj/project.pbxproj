@@ -18,6 +18,7 @@
 		9CE7E5E61DE5A40A00C8BA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7E5E51DE5A40A00C8BA5A /* Assets.xcassets */; };
 		9CE7E5E91DE5A40A00C8BA5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7E5E71DE5A40A00C8BA5A /* LaunchScreen.storyboard */; };
 		9CE7E5F11DE5A94600C8BA5A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7E5F01DE5A94600C8BA5A /* Podfile */; };
+		FF02A8012363623200FC0046 /* PHPhotoLibrary+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02A8002363623200FC0046 /* PHPhotoLibrary+Rx.swift */; };
 		FF8752C223509B880079C692 /* UIAlertViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8752C123509B880079C692 /* UIAlertViewController+Rx.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		9CE7E5E81DE5A40A00C8BA5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CE7E5EA1DE5A40A00C8BA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CE7E5F01DE5A94600C8BA5A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FF02A8002363623200FC0046 /* PHPhotoLibrary+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Rx.swift"; sourceTree = "<group>"; };
 		FF8752C123509B880079C692 /* UIAlertViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				9CDD7B051DE5BC660058B2D5 /* PhotosViewController.swift */,
 				9CDD7B071DE6D7ED0058B2D5 /* PhotoCell.swift */,
 				FF8752C123509B880079C692 /* UIAlertViewController+Rx.swift */,
+				FF02A8002363623200FC0046 /* PHPhotoLibrary+Rx.swift */,
 			);
 			path = Combinestagram;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				9CDD7B0C1DE6E3D30058B2D5 /* PhotoWriter.swift in Sources */,
 				9CE7E5DF1DE5A40A00C8BA5A /* MainViewController.swift in Sources */,
 				FF8752C223509B880079C692 /* UIAlertViewController+Rx.swift in Sources */,
+				FF02A8012363623200FC0046 /* PHPhotoLibrary+Rx.swift in Sources */,
 				9CE7E5DD1DE5A40A00C8BA5A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
