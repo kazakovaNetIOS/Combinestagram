@@ -51,6 +51,7 @@ class MainViewController: UIViewController {
       .disposed(by: bag)
     
     images.asObservable()
+      .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak self] photos in
         self?.updateUI(photos: photos)
       })
