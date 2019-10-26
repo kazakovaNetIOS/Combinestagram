@@ -44,13 +44,17 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    images.subscribe (onNext: { [weak imagePreview] photos in
-      guard let preview = imagePreview else { return }
-      preview.image = photos.collage(size: preview.frame.size)
-    })
+    let shareImages = images.share()
+    
+    shareImages
+      .subscribe (onNext: { [weak imagePreview] photos in
+        guard let preview = imagePreview else { return }
+        preview.image = photos.collage(size: preview.frame.size)
+      })
       .disposed(by: bag)
     
-    images.asObservable()
+    shareImages
+      .asObservable()
       .throttle(0.5, scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak self] photos in
         self?.updateUI(photos: photos)
@@ -61,6 +65,7 @@ class MainViewController: UIViewController {
   @IBAction func actionClear() {
     images.accept([])
     imageCache = []
+    resetNavigationIcon()
   }
   
   @IBAction func actionSave() {
@@ -80,9 +85,6 @@ class MainViewController: UIViewController {
   }
   
   @IBAction func actionAdd() {
-    //    let newImages = images.value + [UIImage(named: "IMG_1907.jpg")!]
-    //    images.accept(newImages)
-    
     let photosViewController = storyboard!.instantiateViewController(
       withIdentifier: "PhotosViewController") as! PhotosViewController
     let newPhotos = photosViewController.selectedPhotos.share()
@@ -124,6 +126,10 @@ class MainViewController: UIViewController {
       .withRenderingMode(.alwaysOriginal)
     
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon, style: .done, target: nil, action: nil)
+  }
+  
+  private func resetNavigationIcon() {
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: nil, style: .done, target: nil, action: nil)
   }
   
   private func updateUI(photos: [UIImage]) {
